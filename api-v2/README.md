@@ -15,3 +15,4 @@ Authorization: Bearer <access_token>
 | Endpoint | Method | URL | Description |
 |----------|--------|-----|-------------|
 | [Authenticate Organization](authenticate-organization.md) | `POST` | `/authenticate` | Obtain a Bearer access token for an organization |
+| [Authenticate Patient](authenticate-patient.md) | `POST` | `/patients/authenticate` | Obtain a JWT Bearer token for a patient |
