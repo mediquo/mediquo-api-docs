@@ -25,7 +25,7 @@ All webhook events share the same top-level envelope:
 | `patient_consultation_rescheduled` | [PatientConsultation](patient-consultation.md) | Appointment rescheduled |
 | `patient_consultation_finished` | [PatientConsultation](patient-consultation.md) | Appointment or chat consultation finished |
 | `patient_consultation_no_show` | [PatientConsultationNoShowed](patient-consultation-no-showed.md) | Patient did not attend |
-| `patient_message_received` | [PatientPendingMessage](patient-pending-message.md) | Unread patient message in room |
+| `patient_message_received` | [PatientMessageReceived](patient-message-received.md) | Professional sent a message to a patient (2s delay) |
 | `patient_immediate_video_call_assigned` | [PatientImmediateCallAssigned](patient-immediate-call-assigned.md) | Immediate video call assigned to professional |
 | `professional_block_created` | [ProfessionalBlock](professional-block.md) | Professional availability block created |
 | `professional_block_updated` | [ProfessionalBlock](professional-block.md) | Professional availability block updated |
