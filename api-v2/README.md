@@ -14,7 +14,7 @@ Authorization: Bearer <access_token>
 
 | Endpoint | Method | URL | Description |
 |----------|--------|-----|-------------|
+| [Create Appointment](create-appointment.md) | `POST` | `/appointments` | Create an appointment between a professional and a patient |
 | [Authenticate Organization](authenticate-organization.md) | `POST` | `/authenticate` | Obtain a Bearer access token for an organization |
 | [Authenticate Patient](authenticate-patient.md) | `POST` | `/patients/authenticate` | Obtain a JWT Bearer token for a patient |
-| [Create Appointment](create-appointment.md) | `POST` | `/appointments` | Create an appointment between a professional and a patient |
 | [Create Bulk Patients](create-bulk-patients.md) | `POST` | `/patients/bulk` | Create up to 100 patients asynchronously |
