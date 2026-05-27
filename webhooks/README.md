@@ -30,6 +30,9 @@ All webhook events share the same top-level envelope:
 | `professional_block_created` | [ProfessionalBlock](professional-block.md) | Professional availability block created |
 | `professional_block_updated` | [ProfessionalBlock](professional-block.md) | Professional availability block updated |
 | `professional_block_deleted` | [ProfessionalBlock](professional-block.md) | Professional availability block deleted |
+| `prescription_created` | [PrescriptionCreated](prescription-created.md) | Prescription PDF generated and ready for download |
+| `patient_report_sent` | [ReportCreated](report-created.md) | SOAP report generated (subscription `report_created`) |
+| `patient_waiting_room_position_update` | [TriagePositionUpdated](triage-position-updated.md) | Immediate video call assigned/declined (subscription `triage_position_updated`) |
 
 ## Shared objects
 
