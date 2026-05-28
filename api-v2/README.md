@@ -4,17 +4,19 @@ Base URL: `https://sdk-v2.mediquo.com`
 
 ## Authentication
 
-All endpoints (except `/authenticate`) require a Bearer token obtained from the [Authenticate Organization](authenticate-organization.md) endpoint.
+All endpoints (except [Authenticate Organization](authenticate/authenticate-organization.md)) require the following header:
 
 ```
 Authorization: Bearer <access_token>
 ```
 
+Obtain the token from the [Authenticate Organization](authenticate/authenticate-organization.md) endpoint.
+
 ## Endpoints
 
 | Endpoint | Method | URL | Description |
 |----------|--------|-----|-------------|
-| [Create Appointment](create-appointment.md) | `POST` | `/appointments` | Create an appointment between a professional and a patient |
-| [Authenticate Organization](authenticate-organization.md) | `POST` | `/authenticate` | Obtain a Bearer access token for an organization |
-| [Authenticate Patient](authenticate-patient.md) | `POST` | `/patients/authenticate` | Obtain a JWT Bearer token for a patient |
-| [Create Bulk Patients](create-bulk-patients.md) | `POST` | `/patients/bulk` | Create up to 100 patients asynchronously |
+| [Create Appointment](appointments/create-appointment.md) | `POST` | `/appointments` | Create an appointment between a professional and a patient |
+| [Authenticate Organization](authenticate/authenticate-organization.md) | `POST` | `/authenticate` | Obtain a Bearer access token for an organization |
+| [Authenticate Patient](patients/authenticate-patient.md) | `POST` | `/patients/authenticate` | Obtain a JWT Bearer token for a patient |
+| [Create Bulk Patients](patients/create-bulk-patients.md) | `POST` | `/patients/bulk` | Create up to 100 patients asynchronously |
