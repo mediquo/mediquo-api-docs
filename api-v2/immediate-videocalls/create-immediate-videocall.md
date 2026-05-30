@@ -32,7 +32,7 @@ Creates an immediate (on-demand) video call for a patient. If the patient alread
 {
   "data": {
     "id": "01j3k2m4n5p6q7r8s9t0",
-    "organization_id": 42,
+    "organization_id": "b3f1c2d4-e5a6-7890-bcde-f12345678901",
     "room_id": null,
     "call_id": "550e8400-e29b-41d4-a716-446655440000",
     "from": null,
@@ -47,12 +47,12 @@ Creates an immediate (on-demand) video call for a patient. If the patient alread
 | Field | Type | Description |
 |-------|------|-------------|
 | `data.id` | `string` | Unique identifier of the immediate video call |
-| `data.organization_id` | `integer` | ID of the organization |
-| `data.room_id` | `string\|null` | Room identifier, populated once a professional is assigned |
+| `data.organization_id` | `string` (UUID) | ID of the organization |
+| `data.room_id` | `integer\|null` | Room identifier, populated once a professional is assigned |
 | `data.call_id` | `string\|null` | UUID of the underlying call session |
 | `data.from` | `string\|null` | Hash of the assigned professional; `null` while still pending |
 | `data.to` | `string` | Hash of the patient |
-| `data.to_contact_id` | `integer\|null` | Contact ID of the assigned professional; `null` while still pending |
+| `data.to_contact_id` | `string\|null` | Contact ID of the assigned professional; `null` while still pending |
 | `data.consultation_url` | `string\|null` | URL the patient uses to join the video call |
 | `data.status` | `string` | Current status: `pending`, `accepted`, `reporting`, `finished`, `declined`, `expired` |
 
