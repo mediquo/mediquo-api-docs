@@ -19,5 +19,6 @@ Obtain the token from the [Authenticate Organization](authenticate/authenticate-
 | [Create Appointment](appointments/create-appointment.md) | `POST` | `/appointments` | Create an appointment between a professional and a patient |
 | [Authenticate Organization](authenticate/authenticate-organization.md) | `POST` | `/authenticate` | Obtain a Bearer access token for an organization |
 | [Create Immediate Video Call](immediate-videocalls/create-immediate-videocall.md) | `POST` | `/immediate-videocalls` | Create an on-demand video call for a patient |
+| [Get Immediate Video Call Schedule Availability](immediate-videocalls/get-immediate-videocall-schedule-availability.md) | `GET` | `/immediate-videocalls/schedules` | List the organization's immediate video call schedules with real-time availability |
 | [Authenticate Patient](patients/authenticate-patient.md) | `POST` | `/patients/authenticate` | Obtain a JWT Bearer token for a patient |
 | [Create Bulk Patients](patients/create-bulk-patients.md) | `POST` | `/patients/bulk` | Create up to 100 patients asynchronously |
