@@ -1,11 +1,11 @@
-# Upload File
+# Upload Document
 
 Uploads a file to S3 storage and returns the storage path and file name. The returned `file_path` and `file_name` can be used as references in other endpoints (e.g. `preconsultation_documents`).
 
 ## Request
 
 **Method:** `POST`
-**URL:** `https://sdk-v2.mediquo.com/documents/v2/upload-file`
+**URL:** `https://sdk-v2.mediquo.com/documents`
 
 ### Headers
 
@@ -56,7 +56,7 @@ Sent as `multipart/form-data`.
 ## Example
 
 ```bash
-curl -X POST "https://sdk-v2.mediquo.com/documents/v2/upload-file" \
+curl -X POST "https://sdk-v2.mediquo.com/documents" \
   -H "Authorization: Bearer <access_token>" \
   -H "x-api-key: <your-api-key>" \
   -H "x-secret-key: <your-secret-key>" \
