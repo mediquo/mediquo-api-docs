@@ -11,6 +11,7 @@ Creates up to 100 patients in a single request. The operation is processed async
 
 | Header | Required | Description |
 |--------|----------|-------------|
+| `Authorization` | Yes | `Bearer <access_token>` — obtained from the [Authenticate Organization](../authenticate/authenticate-organization.md) endpoint |
 | `x-api-key` | Yes | Organization API key |
 | `x-secret-key` | Yes | Organization secret key |
 | `Content-Type` | Yes | `application/json` |
@@ -57,6 +58,7 @@ The response confirms the request was accepted. Patient creation happens asynchr
 
 ```bash
 curl -X POST "https://sdk-v2.mediquo.com/patients/bulk" \
+  -H "Authorization: Bearer <access_token>" \
   -H "Content-Type: application/json" \
   -H "x-api-key: <your-api-key>" \
   -H "x-secret-key: <your-secret-key>" \
