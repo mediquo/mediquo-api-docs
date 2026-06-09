@@ -23,6 +23,10 @@ Creates an immediate (on-demand) video call for a patient. If the patient alread
 | `video_call_schedule_id` | `string` | Yes | — | ID of the video call schedule the patient is joining |
 | `adapter` | `string` | No | `web` | Client adapter type: `web`, `cordova`, `flutter`, `native` |
 | `patient.code` | `string` | Yes | — | External identifier of the patient within the organization |
+| `consultation_reason` | `string` | No | `null` | Free-text reason for the consultation |
+| `preconsultation_documents` | `array` | No | `null` | List of documents uploaded by the patient before the call |
+| `preconsultation_documents[].file_path` | `string` | Yes* | — | Storage path of the document (`*` required when `preconsultation_documents` is present) |
+| `preconsultation_documents[].file_name` | `string` | Yes* | — | File name of the document (`*` required when `preconsultation_documents` is present) |
 
 ## Responses
 
@@ -63,6 +67,7 @@ Creates an immediate (on-demand) video call for a patient. If the patient alread
 | `400 Bad Request` | Patient not found or the specified `video_call_schedule_id` does not exist |
 | `401 Unauthorized` | Missing or invalid `Authorization` Bearer token, `x-api-key`, or `x-secret-key` |
 | `403 Forbidden` | The patient's access has been blocked |
+| `422 Unprocessable Entity` | Validation error — e.g. `consultation_reason` is not a string, or a document entry is missing `file_path`/`file_name` |
 
 ## Example
 
@@ -77,6 +82,13 @@ curl -X POST "https://sdk-v2.mediquo.com/immediate-videocalls" \
     "adapter": "web",
     "patient": {
       "code": "PATIENT-001"
-    }
+    },
+    "consultation_reason": "Headache for the last 3 days",
+    "preconsultation_documents": [
+      {
+        "file_path": "/uploads/abc123",
+        "file_name": "analysis.pdf"
+      }
+    ]
   }'
 ```
