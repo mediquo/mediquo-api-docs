@@ -4,7 +4,7 @@ Creates up to 100 patients in a single request. The operation is processed async
 
 ## Request
 
-**Method:** `POST`
+**Method:** `PUT`
 **URL:** `https://sdk-v2.mediquo.com/patients/bulk`
 
 ### Headers
@@ -57,7 +57,7 @@ The response confirms the request was accepted. Patient creation happens asynchr
 ## Example
 
 ```bash
-curl -X POST "https://sdk-v2.mediquo.com/patients/bulk" \
+curl -X PUT "https://sdk-v2.mediquo.com/patients/bulk" \
   -H "Authorization: Bearer <access_token>" \
   -H "Content-Type: application/json" \
   -H "x-api-key: <your-api-key>" \
