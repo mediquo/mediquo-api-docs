@@ -11,6 +11,7 @@ Creates an emergency phone call appointment for a patient. It finds or creates t
 
 | Header | Required | Description |
 |--------|----------|-------------|
+| `Authorization` | Yes | `Bearer <access_token>` (obtained from [Authenticate Organization](../authenticate/authenticate-organization.md)) |
 | `x-api-key` | Yes | Organization API key |
 | `x-secret-key` | Yes | Organization secret key |
 | `Content-Type` | Yes | `application/json` |
@@ -59,6 +60,7 @@ Creates an emergency phone call appointment for a patient. It finds or creates t
 
 ```bash
 curl -X POST "https://sdk-v2.mediquo.com/emergency-calls" \
+  -H "Authorization: Bearer <access_token>" \
   -H "Content-Type: application/json" \
   -H "x-api-key: <your-api-key>" \
   -H "x-secret-key: <your-secret-key>" \
