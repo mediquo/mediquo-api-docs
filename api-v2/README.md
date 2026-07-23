@@ -17,6 +17,7 @@ Obtain the token from the [Authenticate Organization](authenticate/authenticate-
 | Endpoint | Method | URL | Description |
 |----------|--------|-----|-------------|
 | [Create Appointment](appointments/create-appointment.md) | `POST` | `/appointments` | Create an appointment between a professional and a patient |
+| [Create Emergency Phone Call Appointment](appointments/create-emergency-phone-call-appointment.md) | `POST` | `/appointments/emergency` | Create an emergency phone call appointment for a patient |
 | [Authenticate Organization](authenticate/authenticate-organization.md) | `POST` | `/authenticate` | Obtain a Bearer access token for an organization |
 | [Upload Document](documents/upload-document.md) | `POST` | `/documents` | Upload a file to storage and obtain its path for use in other endpoints |
 | [Create Immediate Video Call](immediate-videocalls/create-immediate-videocall.md) | `POST` | `/immediate-videocalls` | Create an on-demand video call for a patient |
