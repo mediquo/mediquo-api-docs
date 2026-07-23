@@ -5,7 +5,7 @@ Creates an emergency phone call appointment for a patient. It finds or creates t
 ## Request
 
 **Method:** `POST`
-**URL:** `https://sdk-v2.mediquo.com/appointments/emergency`
+**URL:** `https://sdk-v2.mediquo.com/emergency-calls`
 
 ### Headers
 
@@ -58,7 +58,7 @@ Creates an emergency phone call appointment for a patient. It finds or creates t
 ## Example
 
 ```bash
-curl -X POST "https://sdk-v2.mediquo.com/appointments/emergency" \
+curl -X POST "https://sdk-v2.mediquo.com/emergency-calls" \
   -H "Content-Type: application/json" \
   -H "x-api-key: <your-api-key>" \
   -H "x-secret-key: <your-secret-key>" \
