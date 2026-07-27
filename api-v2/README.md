@@ -17,6 +17,7 @@ Obtain the token from the [Authenticate Organization](authenticate/authenticate-
 | Endpoint | Method | URL | Description |
 |----------|--------|-----|-------------|
 | [Create Appointment](appointments/create-appointment.md) | `POST` | `/appointments` | Create an appointment between a professional and a patient |
+| [Get Appointment Consultants](appointments/get-consultants.md) | `GET` | `/appointments/consultants` | List the professionals available to receive appointments |
 | [Get Schedule Availability](appointments/get-schedule-availability.md) | `GET` | `/appointments/schedule-availability` | List the organization's bookable appointment slots |
 | [Authenticate Organization](authenticate/authenticate-organization.md) | `POST` | `/authenticate` | Obtain a Bearer access token for an organization |
 | [Upload Document](documents/upload-document.md) | `POST` | `/documents` | Upload a file to storage and obtain its path for use in other endpoints |
