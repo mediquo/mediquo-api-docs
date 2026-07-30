@@ -16,6 +16,12 @@ All webhook events share the same top-level envelope:
 | `occurred_on` | `integer` | Unix timestamp of when the event occurred |
 | `payload` | `object` | Event-specific data |
 
+## Configuring subscriptions
+
+An organization manages which events it receives (and where) through the
+[Organization Webhooks API](../api-v1/organizations/README.md)
+(`https://sdk.mediquo.com/v1/organizations/webhooks/`).
+
 ## Available events
 
 | Event type | Payload doc | Trigger |
