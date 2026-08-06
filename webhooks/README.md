@@ -49,4 +49,5 @@ Reusable objects referenced across multiple payloads:
 - [Professional object](objects/professional.md)
 - [Report object](objects/report.md)
 - [Prescription object](objects/prescription.md)
+- [PreConsultation object](objects/preconsultation.md)
 - [Speciality object](objects/speciality.md)

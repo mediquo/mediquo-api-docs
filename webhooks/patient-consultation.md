@@ -71,7 +71,13 @@ Fired for the full lifecycle of a consultation (appointment or chat).
         "active_substances": ["paracetamol"]
       }
     ],
-    "derivation": null
+    "derivation": null,
+    "preconsultation": {
+      "reason": "Chest pain and shortness of breath since yesterday",
+      "documents": [
+        { "id": "uuid", "file_name": "report.pdf", "url": "https://..." }
+      ]
+    }
   }
 }
 ```
@@ -120,3 +126,8 @@ Array of [Prescription](objects/prescription.md) objects. Empty array if none.
 | `description` | `string` | Derivation description |
 
 `null` when there is no derivation. Only populated on `patient_consultation_finished` for appointments.
+
+### `preconsultation`
+
+See [PreConsultation](objects/preconsultation.md). Sent on every event in this payload, including
+`patient_consultation_finished` for chat consultations, where it is always `{ "reason": null, "documents": [] }`.
