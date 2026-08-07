@@ -41,6 +41,12 @@ Fired when a patient does not attend a scheduled appointment.
       "id": "professional_hash",
       "name": "Dr. John Smith",
       "avatar": "https://..."
+    },
+    "preconsultation": {
+      "reason": "Chest pain and shortness of breath since yesterday",
+      "documents": [
+        { "id": "uuid", "file_name": "report.pdf", "url": "https://..." }
+      ]
     }
   }
 }
@@ -59,3 +65,7 @@ See [Patient](objects/patient.md).
 ### `professional`
 
 See [Professional](objects/professional.md).
+
+### `preconsultation`
+
+See [PreConsultation](objects/preconsultation.md).
