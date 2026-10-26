@@ -1,6 +1,6 @@
 # List Patient Appointments
 
-Returns the paginated list of appointments of one of the organization's patients, identified by the patient code the organization assigned. No-show appointments and on-demand (immediate) video calls are excluded.
+Returns the paginated list of appointments of one of the organization's patients, identified by the patient code the organization assigned. On-demand (immediate) video calls are excluded, and so are no-show appointments unless `no_show=true` is sent.
 
 ## Request
 
@@ -28,6 +28,7 @@ Returns the paginated list of appointments of one of the organization's patients
 | `status` | `string` or `array` | No | Filter by appointment status. Accepts a single value (`status=pending`) or several (`status[]=pending&status[]=accepted`). One of `pending`, `expired`, `accepted`, `inCall`, `declined`, `cancelled`, `finished`, `free_of_charge`, `owed`, `unpaid`, `reporting` |
 | `starts_at_gte` | `string` (date-time) | No | Only appointments starting at or after this date-time |
 | `starts_at_lte` | `string` (date-time) | No | Only appointments starting at or before this date-time |
+| `no_show` | `boolean` | No | When `true`, returns only the appointments the patient did not attend; when `false`, only those not marked as no-show. Defaults to `false` |
 | `order[field]` | `string` | No | Field to sort by. Defaults to `starts_at` |
 | `order[direction]` | `string` | No | `asc` or `desc`. Defaults to `asc` |
 | `per_page` | `integer` | No | Results per page. Defaults to `15`, capped at `50`; values below `1` are raised to `1` |
@@ -61,6 +62,7 @@ No request body.
       },
       "services": [
         {
+          "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
           "type": "first_visit",
           "name": "Primera visita"
         }
@@ -92,6 +94,7 @@ No request body.
 | `data[].patient.code` | `string\|null` | External identifier of the patient within the organization |
 | `data[].professional.hash` | `string` (UUID)`\|null` | Professional hash, `null` if no professional is assigned yet |
 | `data[].services` | `array` | Services booked for the appointment |
+| `data[].services[].id` | `string` | Service identifier |
 | `data[].services[].type` | `string` | Service code (e.g. `first_visit`, `successive_visit`, `emergency`) |
 | `data[].services[].name` | `string` | Human-readable service name |
 | `data[].speciality.id` | `integer` | Speciality identifier |
@@ -109,7 +112,7 @@ Returns an empty `data` array if the patient has no appointments matching the fi
 |--------|-----------|
 | `401 Unauthorized` | Missing, invalid, or expired Bearer token; or missing `x-api-key` / `x-secret-key` headers |
 | `403 Forbidden` | No patient with the given `patient_code` belongs to the authenticated organization |
-| `422 Unprocessable Entity` | `status` contains a value that is not a valid appointment status |
+| `422 Unprocessable Entity` | `status` contains a value that is not a valid appointment status, or `no_show` is not a boolean |
 
 ## Example
 
