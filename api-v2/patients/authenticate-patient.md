@@ -11,7 +11,7 @@ Authenticates a patient by their organization external ID and returns a JWT Bear
 
 | Header | Required | Description |
 |--------|----------|-------------|
-| `Authorization` | Yes | `Bearer <access_token>` — obtained from the [Authenticate Organization](../authenticate/authenticate-organization.md) endpoint |
+| `Authorization` | Yes | `Bearer <access_token>` from [Authenticate Organization](../authenticate/authenticate-organization.md) |
 | `x-api-key` | Yes | Organization API key |
 | `x-secret-key` | Yes | Organization secret key |
 | `Content-Type` | Yes | `application/json` |
@@ -42,7 +42,7 @@ Authenticates a patient by their organization external ID and returns a JWT Bear
 
 | Status | Condition |
 |--------|-----------|
-| `401 Unauthorized` | The `code` field is missing or does not match any patient in the organization, the Bearer token is missing or invalid, or the `x-api-key` or `x-secret-key` headers are missing or invalid |
+| `401 Unauthorized` | Missing or expired access token, invalid `x-api-key` or `x-secret-key`, the `code` field is missing, or the `code` does not match any patient in the organization |
 
 ## Example
 
