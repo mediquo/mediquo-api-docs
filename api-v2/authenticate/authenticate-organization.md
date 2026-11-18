@@ -28,15 +28,17 @@ Obtains a Bearer access token for an organization. The token is valid for **10 m
 
 ```json
 {
-  "token_type": "Bearer",
-  "access_token": "2|abc123..."
+  "data": {
+    "token_type": "Bearer",
+    "access_token": "2|abc123..."
+  }
 }
 ```
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `token_type` | `string` | Always `Bearer` |
-| `access_token` | `string` | Access token. Expires after 10 minutes |
+| `data.token_type` | `string` | Always `Bearer` |
+| `data.access_token` | `string` | Access token. Expires after 10 minutes |
 
 ### Errors
 
@@ -61,4 +63,4 @@ curl -X POST "https://sdk-v2.mediquo.com/authenticate" \
 ## Notes
 
 - The generated token includes the `organization-api_version-v2` ability, required by all API v2 endpoints.
-- Use the received `access_token` as `Authorization: Bearer <token>` header in subsequent requests.
+- Use the received `data.access_token` as `Authorization: Bearer <token>` header in subsequent requests.
